@@ -1,24 +1,50 @@
-<h1>Listado de artículos</h1>
- 
-<table>
-  <tr>
-    <th>Título</th>
-    <th>Texto</th>
-    <th></th>
-  </tr>
- 
-  <% @articles.each do |article| %>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <%= link_to 'Portada', welcome_index_path, class: 'nav-link'%>       
+        <%= link_to 'Agregar Manga', new_article_path, class: 'nav-link'%>
+</nav>
+
+<div class="container-fluid">
+<br>
+<center><h1><b>Mangas</b></h1>
+<br>
+
+<div class="row">
+<div class="col-1">
+</div>
+<div class="col-10">
+<div class="table-responsive">
+<table class="table table-dark table-hover">
+  <thead>
     <tr>
+      <th scope="col">Portada</th>
+      <th scope="col">Título</th>
+      <th scope="col" >Opciones</th>
+      <th scope="col" ></th>
+      <th scope="col" ></th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @articles.each do |article| %>
+    <tr>
+      <td><%if article.photo.attached?%>
+      <%= image_tag(url_for(article.photo), class:'img-fluid', alt:'Responsive image', width: '160px', height: '240px') %>
+      <%end%></td>
       <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
+      <td><%= link_to 'Ver', article_path(article) %></td>
+      <td><%= link_to 'Editar', edit_article_path(article) %></td>
+      <td><%= link_to 'Borrar', article_path(article),
               method: :delete,
               data: { confirm: '¿Estás seguro?' } %></td>
     </tr>
   <% end %>
+  </tbody>
 </table>
+</div>
+<div class="col-1">
+</div>
+</div>
+</div>
+<br>
 
-
-<%= link_to 'Nuevo artículo', new_article_path %>
+<%= link_to 'Agregar Manga', new_article_path, class: 'btn btn-primary' %>
+</div>

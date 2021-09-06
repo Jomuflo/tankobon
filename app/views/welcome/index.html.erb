@@ -1,2 +1,13 @@
-<h1>Hola! Esta es la página de inicio</h1>
-<%= link_to 'Mi Blog', controller: 'articles' %>
+
+
+<div class="container-xl-fluid">
+    <div class="row mx-5 px-5">
+      <div class="col mx-3">
+       <center><h1><b>Tankōbon</b></h1>
+        <%= image_tag('jump.jpg', class:'img-fluid', alt:'Responsive image', width: '630px', height: '500px')%>
+      </div>
+    </div>
+
+<center><h4><b>Guarda y documenta tu lista de Mangas leídos</b></h4>
+<center><%= link_to 'Mi Lista', articles_path, class: 'btn btn-primary'%>
+</div>

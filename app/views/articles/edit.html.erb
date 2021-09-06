@@ -1,5 +1,16 @@
-<h1>Editar Artículos</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <%= link_to 'Portada', welcome_index_path, class: 'nav-link'%>       
+        <%= link_to 'Biblioteca', articles_path, class: 'nav-link'%>
+</nav>
+<br>
+
+<center><h1><strong>Editar Información</strong></h1>
+<br>
+<br>
  
 <%= render 'form' %>
- 
-<%= link_to 'Back', articles_path %>
+
+
+<br>
+<br>
+<%= link_to 'Atrás', articles_path, class:'btn btn-primary' %></center>

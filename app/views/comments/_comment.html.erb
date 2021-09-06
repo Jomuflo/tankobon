@@ -1,9 +1,11 @@
+
 <p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
- 
-<p>
-  <strong>Comment:</strong>
+  <strong>Información:</strong>
   <%= comment.body %>
+</p>
+
+<p>
+  <%= link_to 'Eliminar dato', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Estás seguro?' } %>
 </p>
